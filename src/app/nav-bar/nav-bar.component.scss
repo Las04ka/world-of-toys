@@ -1,31 +1,31 @@
-.wrapper{
+.wrapper {
   box-shadow: 1px 0 0.5em #afafaf;
   display: flex;
   padding: 0 60px;
   align-items: center;
 }
 
-.left-items{
+.left-items {
   display: flex;
   width: 80%;
   align-items: center;
   justify-content: center;
   gap: 40px;
-  margin-top:12px;
+  margin-top: 12px;
 }
 
-.route{
+.route {
   font-weight: bold;
   font-size: 20px;
 }
 
-.right-items{
+.right-items {
   display: flex;
   gap: 20px;
   align-items: center;
   width: 20%;
 }
 
-.shopping-cart{
+.shopping-cart {
   border-radius: 50px;
 }
