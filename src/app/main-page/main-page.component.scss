@@ -89,8 +89,7 @@ swiper-container.banner::after {
   margin-top: 20px;
 }
 
-.text button,
-.banner-text button {
+* button {
   border-radius: 50px;
   font-family: 'Nunito';
   font-style: normal;
@@ -106,8 +105,7 @@ swiper-container.banner::after {
 .secion-title {
   position: relative;
   text-align: center;
-  margin: 10px 0 25px;
-  text-transform: capitalize;
+  margin: 10px 0 35px;
   color: #262124;
   padding: 80px 0 0;
   letter-spacing: 0.5px;
@@ -248,4 +246,83 @@ swiper-container.banner::after {
 
 .banner-text button {
   padding: 25px 20px;
+}
+
+.about-text {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  letter-spacing: 0.5px;
+
+  color: #666666;
+}
+
+//blog cards
+.blog {
+  padding-bottom: 100px;
+}
+
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.blog-image {
+  margin: 0 auto;
+  text-decoration: none;
+}
+
+.blog-title a {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.8px;
+  text-decoration: none;
+  color: #222222;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+}
+
+.blog-title a:hover {
+  color: #FF8C9A;
+}
+
+.blog-title {
+  margin-bottom: 5px;
+}
+
+.blog-card button {
+  margin-top: 20px;
+}
+
+.blog p {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.8px;
+  color: #777777;
+  text-overflow: ellipsis;
+}
+
+.blog-content {
+  height: 60px;
+  text-overflow: ellipsis;
+}
+
+.blog-card button {
+  margin-top: 5px;
 }
