@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MainPageModule } from './main-page/main-page.module';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, NavBarComponent],
@@ -25,8 +26,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     RouterOutlet,
     MatMenuModule,
     MatSnackBarModule,
+    MainPageModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
