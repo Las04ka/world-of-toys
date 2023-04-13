@@ -21,6 +21,10 @@ swiper-container.banner swiper-slide {
   background: url('/assets/main-page-slider/slide-1.jpg') no-repeat;
 }
 
+.slide2 {
+  background: url('/assets/main-page-slider/slide-2.jpg') no-repeat;
+}
+
 swiper-container.banner::after {
   content: '';
   background: url('/assets/main-page-slider/slider-pattern.png') no-repeat;
@@ -36,13 +40,14 @@ swiper-container.banner::after {
   z-index: 1;
 }
 
-.slide1 img {
-  max-width: 25%;
+.banner img {
+  max-width: 20vw;
   height: auto;
   margin-top: 25px;
 }
 
-.slide1>.text {
+.slide1 .text,
+.slide2 .text {
   display: flex;
   flex-direction: column;
   justify-content: top;
@@ -51,6 +56,12 @@ swiper-container.banner::after {
   height: 100%;
   margin-top: 40px;
 }
+
+.slide2 .text {
+  float: right;
+  width: 65%;
+}
+
 
 .text>h1 {
   font-family: 'Comfortaa';

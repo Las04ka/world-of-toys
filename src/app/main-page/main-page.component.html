@@ -7,8 +7,13 @@
             <button mat-raised-button color="accent">Детальніше</button>
         </div>
     </swiper-slide>
-    <swiper-slide>
-        <img src="/assets/main-page-slider/slide-2.jpg" alt="">
+    <swiper-slide class="slide2">
+        <div class="text">
+            <img src="/assets/main-page-slider/Ribbon2.svg" alt="">
+            <h1> Все,<br> для вашого малюка!</h1>
+            <p>Обирай іграшки просто незамінні для <br>відпочинку і навчання дитини</p>
+            <button mat-raised-button color="accent">Детальніше</button>
+        </div>
     </swiper-slide>
 
 </swiper-container>
@@ -21,7 +26,12 @@
         Популярні продукти
     </h2>
 
-    <p>main-page works!</p>
+
+    <swiper-container slides-per-view="4" class="popular" space-between="25">
+        <swiper-slide *ngFor="let number of [0,1,2,3,4]">
+            <app-store-item></app-store-item>
+        </swiper-slide>
+    </swiper-container>
 
 </div>
 
@@ -32,7 +42,7 @@
             <div class="banner-text">
                 <h2>Все, для вашого малюка!</h2>
                 <p>Обирай іграшки просто незамінні для відпочинку і навчання дитини</p>
-                <button mat-raised-button >перейти до покупок</button>
+                <button mat-raised-button>перейти до покупок</button>
             </div>
         </div>
     </div>

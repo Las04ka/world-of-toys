@@ -5,11 +5,12 @@ import { MainPageComponent } from './main-page.component';
 import { MatButtonModule } from '@angular/material/button';
 
 import { register } from 'swiper/element/bundle';
+import { StoreItemComponent } from './store-item/store-item.component';
 // register Swiper custom elements
 register();
 
 @NgModule({
-  declarations: [MainPageComponent],
+  declarations: [MainPageComponent, StoreItemComponent],
   imports: [
     CommonModule,
     MatButtonModule,
