@@ -17,12 +17,13 @@ export class ShopComponent implements OnInit {
   breakpoint = 4;
   priceOptions!: Options;
   brands: IFilterEntity[] = [];
+  search = '';
 
   constructor(private shopService: ShopService) {}
 
   ngOnInit() {
     this.shopService.getFilters().subscribe((el) => {
-      const modifiedFilters: IFilters = {
+      this.filters = {
         ...el,
         ageCategories: el.ageCategories.map((category) => ({
           ...category,
@@ -48,7 +49,6 @@ export class ShopComponent implements OnInit {
           }),
         })),
       };
-      this.filters = modifiedFilters;
       this.priceOptions = {
         floor: el.minProductPrice,
         ceil: el.maxProductPrice,
@@ -96,7 +96,8 @@ export class ShopComponent implements OnInit {
           (el) => el.checked && el.name == product.brandCategory.name,
         ) &&
         this.filters.minProductPrice <= product.price &&
-        this.filters.maxProductPrice >= product.price
+        this.filters.maxProductPrice >= product.price &&
+        product.name.toLowerCase().includes(this.search.toLowerCase())
       )
         this.renderProducts.push(product);
     });
@@ -110,5 +111,4 @@ export class ShopComponent implements OnInit {
     });
     this.onFilterChange();
   }
-
 }

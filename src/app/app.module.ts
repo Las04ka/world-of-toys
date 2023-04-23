@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AuthGuard } from 'src/app/shared/guards/auth.guard';
 import { TokenInterceptor } from 'src/app/shared/interceptors/token.interceptor';
 
 import { AppComponent } from './app.component';
@@ -35,6 +36,7 @@ import { MainPageModule } from './main-page/main-page.module';
       useClass: TokenInterceptor,
       multi: true,
     },
+    AuthGuard
   ],
   bootstrap: [AppComponent],
 })

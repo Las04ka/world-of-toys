@@ -11,6 +11,12 @@
         [(highValue)]="filters.maxProductPrice"></ngx-slider>
     </form>
 
+    <p class="filter-title">Пошук</p>
+    <input
+      class="search"
+      type="text"
+      [(ngModel)]="search"
+      (input)="onFilterChange()" />
     <p class="filter-title">Вікова категорія</p>
     <mat-checkbox
       *ngFor="let age of filters.ageCategories"

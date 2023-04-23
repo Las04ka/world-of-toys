@@ -1,9 +1,8 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { catchError, Observable, throwError } from 'rxjs';
-import { IFilters } from 'src/app/shop/interfaces/filters';
+import { Observable } from 'rxjs';
 
+import { IFilters } from 'src/app/shop/interfaces/filters';
 import { IProduct } from 'src/app/shop/interfaces/product';
 import { environment } from 'src/environments/environment';
 
@@ -22,10 +21,10 @@ export class ShopService {
   getFilters(): Observable<IFilters> {
     return this.http.get<IFilters>(environment.apiUrl + '/shop/categories');
   }
-  addToCart(slug: string, num?: number): Observable<any> {
-    return this.http
-      .get<any>(
-        environment.apiUrl + '/cart',
-      )
+  addToCart(slug: string, num: string): Observable<void> {
+    return this.http.post<void>(environment.apiUrl + '/cart/add-product', {
+      slug: slug,
+      quantity: num,
+    });
   }
 }

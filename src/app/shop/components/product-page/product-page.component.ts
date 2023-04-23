@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import {  Observable } from 'rxjs';
 import { ICategory, IProduct } from 'src/app/shop/interfaces/product';
 import { ShopService } from 'src/app/shop/services/shop.service';
@@ -38,7 +38,7 @@ export class ProductPageComponent implements OnInit {
 
   onAddingToCart() {
     this.shopService
-      .addToCart(this.slug, +this.quantity.value!).subscribe();
+      .addToCart(this.slug, this.quantity.value!.toString()).subscribe();
   }
 
   onInput(event: any) {

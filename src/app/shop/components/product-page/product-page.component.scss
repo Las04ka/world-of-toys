@@ -12,11 +12,24 @@
 .right-items {
   flex: 1;
 
-  .action-buttons{
+  .title {
+    font-family: Nunito;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff8c9a;
+  }
+
+  .action-buttons {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 30px;
+    margin-bottom: 20px;
   }
 
   .quantity-box {
@@ -35,6 +48,10 @@
       font-family: Nunito;
       font-weight: bolder;
     }
+  }
+
+  .desc-categories{
+    font-size: 16px;
   }
 
   .add-to-cart {

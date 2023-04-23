@@ -11,6 +11,13 @@
   flex-direction: column;
   font-family: 'Nunito';
 
+  .search{
+    width: 240px;
+    height: 25px;
+    border-radius: 50px;
+    border: #dedede solid 0.3px;
+  }
+
   .filter-title {
     color: #3d3d3d;
     font-size: 24px;
