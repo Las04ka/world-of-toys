@@ -1,4 +1,7 @@
-<div class="main">
-  <app-header></app-header>
-  <app-nav-bar></app-nav-bar>
+<div [ngClass]="isAuth ? 'auth' : 'main'">
+  <div *ngIf="!isAuth">
+    <app-header></app-header>
+    <app-nav-bar></app-nav-bar>
+  </div>
+  <router-outlet></router-outlet>
 </div>

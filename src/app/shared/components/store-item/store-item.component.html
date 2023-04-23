@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="desc">
+    <a
+      [routerLink]="['/shop', productData.slug]"
+      href="#"
+      class="title"
+      >{{ productData.name }}</a
+    >
+  </div>
+  <a
+    class="image-wrapper"
+    [routerLink]="['/shop', productData.slug]">
+    <img
+      class="image"
+      src="{{ productData.image }}"
+      alt="" />
+  </a>
+  <div class="footer">
+    <div class="price">
+      <span class="price-value">{{ productData.price }}</span>
+      <span class="price-currency">₴</span>
+    </div>
+    <p>в наявності</p>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<div
+  *ngIf="productData | async as product; else loader"
+  class="wrapper">
+  <div class="left-items">
+    <img src="{{ product.image }}" />
+  </div>
+  <div class="right-items">
+    <div class="desc-header">
+      <p class="title">{{ product.name }}</p>
+      <p class="price">{{ product.price }}₴</p>
+    </div>
+    <div class="desc-body">
+      <p class="desc-text">{{ product.description }}</p>
+      <div class="action-buttons">
+        <div class="quantity-box">
+          <button
+            mat-icon-button
+            (click)="decreaseQuantity()">
+            <mat-icon>remove</mat-icon>
+          </button>
+          <input
+            type="text"
+            class="price-input"
+            [formControl]="quantity"
+            (input)="onInput($event)" />
+
+          <button
+            mat-icon-button
+            (click)="increaseQuantity()">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+        <button
+          class="add-to-cart"
+          mat-raised-button
+          (click)="onAddingToCart()">
+          add to cart
+        </button>
+      </div>
+    </div>
+    <div class="desc-categories">
+      <p>
+        <b>{{ product.genderCategory.name }}</b>
+      </p>
+      <p>
+        <b> {{ arrToString(product.ageCategory) }}</b>
+      </p>
+      <p><b>Тип іграшки: </b>{{ product.typeCategory.name }}</p>
+      <p><b>Бренд: </b>{{ product.brandCategory.name }}</p>
+      <p><b>Країна Виготовник: </b>{{ product.originCategory.name }}</p>
+    </div>
+  </div>
+</div>
+
+<ng-template #loader>
+  <mat-spinner></mat-spinner>
+</ng-template>

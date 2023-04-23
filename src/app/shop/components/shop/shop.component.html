@@ -1,0 +1,89 @@
+<div
+  *ngIf="renderProducts && filters; else loader"
+  class="wrapper">
+  <div class="filters">
+    <form class="filters-form">
+      <p class="filter-title">Ціна</p>
+      <ngx-slider
+        [options]="priceOptions"
+        [(value)]="filters.minProductPrice"
+        (userChange)="onFilterChange()"
+        [(highValue)]="filters.maxProductPrice"></ngx-slider>
+    </form>
+
+    <p class="filter-title">Пошук</p>
+    <input
+      class="search"
+      type="text"
+      [(ngModel)]="search"
+      (input)="onFilterChange()" />
+    <p class="filter-title">Вікова категорія</p>
+    <mat-checkbox
+      *ngFor="let age of filters.ageCategories"
+      class="check"
+      [value]="age.name"
+      (change)="onFilterChange()"
+      [(ngModel)]="age.checked"
+      >{{ age.name }}
+    </mat-checkbox>
+
+    <p class="filter-title">Для кого?</p>
+    <mat-checkbox
+      *ngFor="let gender of filters.genderCategories"
+      class="check"
+      [value]="gender.name"
+      (change)="onFilterChange()"
+      [(ngModel)]="gender.checked"
+      >{{ gender.name }}
+    </mat-checkbox>
+
+    <p class="filter-title">Країна Виготовлення</p>
+    <mat-checkbox
+      *ngFor="let country of filters.originCategories"
+      class="check"
+      [value]="country.name"
+      (change)="onFilterChange()"
+      [(ngModel)]="country.checked"
+      >{{ country.name }}
+    </mat-checkbox>
+
+    <p class="filter-title">Тип іграшки</p>
+    <mat-checkbox
+      *ngFor="let type of filters.typeCategories"
+      class="check"
+      [value]="type.name"
+      (change)="onTypeChange()"
+      [(ngModel)]="type.checked"
+      >{{ type.name }}
+    </mat-checkbox>
+
+    <p
+      *ngIf="brands.length > 0"
+      class="filter-title">
+      Бренд
+    </p>
+    <mat-checkbox
+      *ngFor="let brand of brands"
+      class="check"
+      [value]="brand.name"
+      (change)="onFilterChange()"
+      [(ngModel)]="brand.checked"
+      >{{ brand.name }}
+    </mat-checkbox>
+  </div>
+  <mat-grid-list
+    class="product-list"
+    rowHeight="2:3"
+    gutterSize="1rem"
+    [cols]="breakpoint"
+    (window:resize)="onResize()">
+    <mat-grid-tile *ngFor="let product of renderProducts">
+      <app-store-item [productData]="product"></app-store-item>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<ng-template #loader>
+  <mat-spinner
+    color="accent"
+    class="spinner"></mat-spinner>
+</ng-template>
