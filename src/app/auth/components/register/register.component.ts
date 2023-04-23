@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
-import { SnackbarService } from '../../../shared/services/snackbar.service';
-import { UnSubscriberComponent } from '../../../shared/classes/unsubscriber';
 import { takeUntil } from 'rxjs';
+
+import { AuthService } from '../../services/auth.service';
+import { SnackbarService } from 'src/app/shared/services/snackbar.service';
+import { UnSubscriberComponent } from 'src/app/shared/classes/unsubscriber';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,7 @@ import { takeUntil } from 'rxjs';
 export class RegisterComponent extends UnSubscriberComponent {
   form: FormGroup = new FormGroup({
     firstname: new FormControl(null, [Validators.required]),
-    secondName: new FormControl(null, [Validators.required]),
+    lastname: new FormControl(null, [Validators.required]),
     email: new FormControl(null, [Validators.required, Validators.email]),
     password: new FormControl(null, [Validators.required]),
   });

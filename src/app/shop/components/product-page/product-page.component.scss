@@ -1,0 +1,52 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+}
+.left-items {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.right-items {
+  flex: 1;
+
+  .action-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .quantity-box {
+    border-radius: 50px 50px;
+    background-color: #e4e4e4;
+    width: 140px;
+    display: flex;
+    justify-content: space-between;
+
+    .price-input {
+      background-color: transparent;
+      width: 30px;
+      border: 0;
+      text-align: center;
+      font-size: 15px;
+      font-family: Nunito;
+      font-weight: bolder;
+    }
+  }
+
+  .add-to-cart {
+    border-radius: 50px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+    height: 50px;
+    --mdc-protected-button-container-color: #ff8c9a;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+}

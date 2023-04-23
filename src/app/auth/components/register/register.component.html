@@ -35,11 +35,11 @@
           <input
             matInput
             placeholder="secondName"
-            formControlName="secondName" />
+            formControlName="lastname" />
           <mat-error
             *ngIf="
-              form.controls['secondName'].touched &&
-              form.controls['secondName'].hasError('required')
+              form.controls['lastname'].touched &&
+              form.controls['lastname'].hasError('required')
             ">
             Second name is required
           </mat-error>

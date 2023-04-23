@@ -1,19 +1,16 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { register } from 'swiper/element/bundle';
 import { MainPageComponent } from './main-page.component';
 
-import { MatButtonModule } from '@angular/material/button';
+import { SharedModule } from 'src/app/shared/shared.module';
 
-import { register } from 'swiper/element/bundle';
-import { StoreItemComponent } from './store-item/store-item.component';
 // register Swiper custom elements
 register();
 
 @NgModule({
-  declarations: [MainPageComponent, StoreItemComponent],
+  declarations: [MainPageComponent],
   imports: [
-    CommonModule,
-    MatButtonModule,
+    SharedModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

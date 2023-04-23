@@ -38,7 +38,13 @@ export class TokenInterceptor implements HttpInterceptor {
         }),
       );
     }
-    return next.handle(req);
+    return next.handle(req).pipe(
+      catchError((error: HttpErrorResponse) => {
+        if (error.status === 401 || error.status === 403)
+          this.router.navigateByUrl('auth/login');
+        return throwError(error);
+      }),
+    );
   }
 
   addToken<T>(request: HttpRequest<T>, token: string): HttpRequest<T> {

@@ -6,10 +6,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
+import { StoreItemComponent } from 'src/app/shared/components/store-item/store-item.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [StoreItemComponent],
+  imports:[RouterModule],
   exports: [
+    CommonModule,
+    StoreItemComponent,
     RouterModule,
     CommonModule,
     MatCardModule,

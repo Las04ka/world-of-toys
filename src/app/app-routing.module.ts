@@ -13,6 +13,10 @@ const routes: Routes = [
     component: MainPageComponent,
   },
   {
+    path: 'shop',
+    loadChildren: () => import('./shop/shop.module').then((m) => m.ShopModule),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

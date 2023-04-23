@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IProduct } from 'src/app/shop/interfaces/product';
 
 @Component({
   selector: 'app-store-item',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./store-item.component.scss']
 })
 export class StoreItemComponent {
-
+  @Input() productData!:IProduct;
 }
