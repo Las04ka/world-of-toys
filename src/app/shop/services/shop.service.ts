@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
+import { SnackbarService } from 'src/app/shared/services/snackbar.service';
 
 import { IFilters } from 'src/app/shop/interfaces/filters';
 import { IProduct } from 'src/app/shop/interfaces/product';
@@ -10,7 +11,10 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class ShopService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private snackbarService: SnackbarService,
+  ) {}
 
   getAllProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(environment.apiUrl + '/shop');
@@ -22,9 +26,15 @@ export class ShopService {
     return this.http.get<IFilters>(environment.apiUrl + '/shop/categories');
   }
   addToCart(slug: string, num: string): Observable<void> {
-    return this.http.post<void>(environment.apiUrl + '/cart/add-product', {
-      slug: slug,
-      quantity: num,
-    });
+    return this.http
+      .post<void>(environment.apiUrl + '/cart/add-product', {
+        slug: slug,
+        quantity: num,
+      })
+      .pipe(
+        tap(() =>
+          this.snackbarService.openSnackBar('Successfully added to cart'),
+        ),
+      );
   }
 }

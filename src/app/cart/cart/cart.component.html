@@ -1,1 +1,56 @@
-<p>cart works!</p>
+<div
+  *ngIf="cartItems"
+  class="cart">
+  <mat-card
+    *ngFor="let item of cartItems"
+    class="cart-item">
+    <img
+      alt="item"
+      class="item-image"
+      mat-card-image
+      src="{{ item.image }}" />
+    <div class="right-items">
+      <mat-card-header class="item-header">
+        <mat-card-title class="title">{{ item.name }}</mat-card-title>
+        <mat-icon
+          class="close-icon"
+          (click)="onClose(item.slug)"
+          >close</mat-icon
+        >
+      </mat-card-header>
+      <mat-card-content class="content">
+        <p class="price">{{ item.price }}₴</p>
+        <div class="quantity">
+          <p class="quantity-text">Кількість</p>
+          <div class="quantity-box">
+            <button
+              mat-icon-button
+              (click)="decreaseQuantity(item)">
+              <mat-icon>remove</mat-icon>
+            </button>
+            <input
+              type="text"
+              class="price-input"
+              [(ngModel)]="item.quantity"
+              (change)="onInput(item)" />
+
+            <button
+              mat-icon-button
+              (click)="increaseQuantity(item)">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </div>
+  </mat-card>
+  <div class="order">
+    <p class="full-price">ціна: {{ price }}₴</p>
+    <button
+      mat-raised-button
+      class="order-btn"
+      (click)="makeOrder()">
+      Оформити Замовлення
+    </button>
+  </div>
+</div>
