@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import {  Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ICategory, IProduct } from 'src/app/shop/interfaces/product';
 import { ShopService } from 'src/app/shop/services/shop.service';
 
@@ -14,10 +14,7 @@ export class ProductPageComponent implements OnInit {
   slug: string;
   productData!: Observable<IProduct>;
   quantity = new FormControl(1);
-  constructor(
-    private shopService: ShopService,
-    activeRoute: ActivatedRoute,
-  ) {
+  constructor(private shopService: ShopService, activeRoute: ActivatedRoute) {
     this.slug = activeRoute.snapshot.params['id'];
   }
   ngOnInit() {
@@ -38,7 +35,8 @@ export class ProductPageComponent implements OnInit {
 
   onAddingToCart() {
     this.shopService
-      .addToCart(this.slug, this.quantity.value!.toString()).subscribe();
+      .addToCart(this.slug, this.quantity.value!.toString())
+      .subscribe();
   }
 
   onInput(event: any) {

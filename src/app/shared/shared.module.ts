@@ -10,7 +10,7 @@ import { StoreItemComponent } from 'src/app/shared/components/store-item/store-i
 
 @NgModule({
   declarations: [StoreItemComponent],
-  imports:[RouterModule],
+  imports: [RouterModule],
   exports: [
     CommonModule,
     StoreItemComponent,

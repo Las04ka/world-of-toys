@@ -34,9 +34,9 @@ swiper-container.banner::after {
   height: 100px;
   position: absolute;
 
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 1;
 }
 
@@ -62,8 +62,7 @@ swiper-container.banner::after {
   width: 65%;
 }
 
-
-.text>h1 {
+.text > h1 {
   font-family: 'Comfortaa';
   font-size: 48px;
   font-weight: 700;
@@ -72,11 +71,11 @@ swiper-container.banner::after {
   letter-spacing: 0.5px;
   text-align: center;
   color: #262124;
-  text-shadow: 0px 0px 4px #FFFFFF;
+  text-shadow: 0px 0px 4px #ffffff;
   margin-top: 30px;
 }
 
-.text>p,
+.text > p,
 .banner-text p {
   font-family: 'Comfortaa';
   font-size: 26px;
@@ -85,7 +84,7 @@ swiper-container.banner::after {
   letter-spacing: 0.5px;
   text-align: center;
   color: #262124;
-  text-shadow: 0px 0px 4px #FFFFFF;
+  text-shadow: 0px 0px 4px #ffffff;
   margin-top: 20px;
 }
 
@@ -96,9 +95,9 @@ swiper-container.banner::after {
   font-weight: 700;
   font-size: 16px;
   line-height: 16px;
-  --mdc-protected-button-container-color: #FF8C9A;
+  --mdc-protected-button-container-color: #ff8c9a;
   margin-top: 40px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-transform: uppercase;
 }
 
@@ -142,7 +141,6 @@ swiper-container.banner::after {
   top: 46%;
 }
 
-
 .secion-title .title-icon::after {
   left: auto;
   right: -70px;
@@ -165,7 +163,6 @@ swiper-container.banner::after {
   left: auto;
 }
 
-
 // round photo banner
 .banner-wraper {
   position: relative;
@@ -176,11 +173,10 @@ swiper-container.banner::after {
 .photo-banner {
   height: 700px;
   width: 100%;
-  background: #FCDCEA;
+  background: #fcdcea;
   display: flex;
   align-items: center;
 }
-
 
 .banner-content {
   width: 100%;
@@ -224,7 +220,6 @@ swiper-container.banner::after {
   }
 }
 
-
 .banner-text {
   max-width: 55%;
   float: right;
@@ -239,7 +234,7 @@ swiper-container.banner::after {
   line-height: 87.9%;
   text-align: center;
   letter-spacing: 0.5px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 20px;
 }
@@ -292,11 +287,10 @@ swiper-container.banner::after {
   color: #222222;
   white-space: nowrap;
   text-overflow: ellipsis;
-
 }
 
 .blog-title a:hover {
-  color: #FF8C9A;
+  color: #ff8c9a;
 }
 
 .blog-title {

@@ -9,9 +9,7 @@ register();
 
 @NgModule({
   declarations: [MainPageComponent],
-  imports: [
-    SharedModule
-  ],
+  imports: [SharedModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class MainPageModule { }
+export class MainPageModule {}

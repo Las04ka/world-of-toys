@@ -7,12 +7,10 @@ import { ShopService } from 'src/app/shop/services/shop.service';
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss'],
 })
-export class MainPageComponent{
+export class MainPageComponent {
+  products?: IProduct[];
 
-  products?:IProduct[];
-
-  constructor(private shopService:ShopService) {
-    this.shopService.getAllProducts().subscribe(el=>this.products=el)
+  constructor(private shopService: ShopService) {
+    this.shopService.getAllProducts().subscribe((el) => (this.products = el));
   }
-
 }

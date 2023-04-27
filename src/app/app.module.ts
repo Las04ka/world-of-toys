@@ -36,8 +36,8 @@ import { MainPageModule } from './main-page/main-page.module';
       useClass: TokenInterceptor,
       multi: true,
     },
-    AuthGuard
+    AuthGuard,
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

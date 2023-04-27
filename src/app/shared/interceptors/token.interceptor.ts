@@ -8,6 +8,7 @@ import {
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError, Observable, throwError } from 'rxjs';
+import { SnackbarService } from 'src/app/shared/services/snackbar.service';
 
 import { LocalStorageService } from '../services/local-storage.service';
 import { AuthService } from '../../auth/services/auth.service';
@@ -18,6 +19,7 @@ export class TokenInterceptor implements HttpInterceptor {
     private router: Router,
     private localStorageService: LocalStorageService,
     private authService: AuthService,
+    private snackbarService: SnackbarService,
   ) {}
 
   intercept<T, U>(
@@ -41,7 +43,8 @@ export class TokenInterceptor implements HttpInterceptor {
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse) => {
         if (error.status === 401 || error.status === 403)
-          this.router.navigateByUrl('auth/login');
+          this.snackbarService.openSnackBar('Sign in first');
+        this.router.navigateByUrl('auth/login');
         return throwError(error);
       }),
     );
