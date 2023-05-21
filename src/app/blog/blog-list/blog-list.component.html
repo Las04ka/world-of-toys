@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <mat-grid-list
+    class="product-list"
+    cols="3"
+    rowHeight="4:4"
+    gutterSize="1rem">
+    <mat-grid-tile
+      *ngFor="let blog of blogs; index as i"
+      [colspan]="1"
+      [rowspan]="1">
+      <mat-card>
+        <img
+          src="{{ blog.image }}"
+          [routerLink]="['/blog', blog.slug]"
+          class="blog-image"
+          alt="blog-image" />
+        <div class="created">{{ blog.author }} {{ blog.createdAt }}</div>
+        <div
+          class="title"
+          [routerLink]="['/blog', blog.slug]">
+          {{ blog.title }}
+        </div>
+        <button
+          mat-raised-button
+          class="read-more"
+          [routerLink]="['/blog', blog.slug]">
+          Read More
+        </button>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -27,7 +27,7 @@ export class TokenInterceptor implements HttpInterceptor {
     next: HttpHandler,
   ): Observable<HttpEvent<U>> {
     const token = this.localStorageService.getData('Authorization');
-    if (token) {
+    if (token && !req.url.includes('blog')) {
       const processedReq = this.addToken(req, token);
       return next.handle(processedReq).pipe(
         catchError((error: HttpErrorResponse) => {
@@ -42,9 +42,10 @@ export class TokenInterceptor implements HttpInterceptor {
     }
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse) => {
-        if (error.status === 401 || error.status === 403)
+        if (error.status === 401 || error.status === 403) {
           this.snackbarService.openSnackBar('Sign in first');
-        this.router.navigateByUrl('auth/login');
+          this.router.navigateByUrl('auth/login');
+        }
         return throwError(error);
       }),
     );

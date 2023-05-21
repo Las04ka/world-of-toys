@@ -20,7 +20,7 @@ export class CartComponent {
         this.price += item.price * item.quantity;
       });
     });
-    this.subject.pipe(debounceTime(500)).subscribe((el) => {
+    this.subject.pipe(debounceTime(300)).subscribe((el) => {
       this.cartService.updateQuantity(el.slug, el.num).subscribe();
       this.price = 0;
       this.cartItems.forEach(
@@ -57,7 +57,4 @@ export class CartComponent {
       .subscribe();
   }
 
-  makeOrder() {
-    console.log(1);
-  }
 }

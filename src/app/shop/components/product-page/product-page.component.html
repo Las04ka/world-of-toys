@@ -2,12 +2,15 @@
   *ngIf="productData | async as product; else loader"
   class="wrapper">
   <div class="left-items">
-    <img src="{{ product.image }}" />
+    <img
+      src="{{ product.image }}"
+      class="blog-image"
+      alt="blog-image" />
   </div>
   <div class="right-items">
     <div class="desc-header">
       <p class="title">{{ product.name }}</p>
-      <p class="price">{{ product.price }}₴</p>
+      <p class="price">Ціна: {{ product.price }}₴</p>
     </div>
     <div class="desc-body">
       <p class="desc-text">{{ product.description }}</p>
@@ -34,17 +37,13 @@
           class="add-to-cart"
           mat-raised-button
           (click)="onAddingToCart()">
-          add to cart
+          Додати до кошика
         </button>
       </div>
     </div>
     <div class="desc-categories">
-      <p>
-        <b>{{ product.genderCategory.name }}</b>
-      </p>
-      <p>
-        <b> {{ arrToString(product.ageCategory) }}</b>
-      </p>
+      <p><b>Стать: </b>{{ product.genderCategory.name }}</p>
+      <p><b>Вік: </b>{{ arrToString(product.ageCategory) }}</p>
       <p><b>Тип іграшки: </b>{{ product.typeCategory.name }}</p>
       <p><b>Бренд: </b>{{ product.brandCategory.name }}</p>
       <p><b>Країна Виготовник: </b>{{ product.originCategory.name }}</p>

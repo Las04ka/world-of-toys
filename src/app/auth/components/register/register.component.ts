@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs';
 
 import { AuthService } from '../../services/auth.service';
@@ -22,6 +23,7 @@ export class RegisterComponent extends UnSubscriberComponent {
   constructor(
     private authService: AuthService,
     private snackbar: SnackbarService,
+    private router: Router,
   ) {
     super();
   }
@@ -33,6 +35,7 @@ export class RegisterComponent extends UnSubscriberComponent {
       .subscribe(
         () => {
           this.snackbar.openSnackBar('Confirm your email');
+          this.router.navigateByUrl('/auth/login');
         },
         (error) => {
           this.snackbar.openSnackBar(error.error.message);

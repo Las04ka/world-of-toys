@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+  justify-content: space-between;
+}
+.left-items {
+  display: flex;
+  width: 48%;
+  justify-content: center;
+  align-items: center;
+  .blog-image {
+    width: 100%;
+  }
+}
+
+.right-items {
+  width: 48%;
+  font-family: Nunito, serif;
+
+  .title {
+    font-weight: bold;
+    font-size: 36px;
+    color: #ff8c9a;
+    line-height: 30px;
+  }
+  .created {
+    color: #aaaaaa;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .desc-text {
+    white-space: break-spaces;
+    font-size: 20px;
+    font-weight: 400;
+    color: #444;
+  }
+}

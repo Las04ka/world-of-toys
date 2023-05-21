@@ -5,6 +5,12 @@
   padding: 22px;
 }
 
+::ng-deep {
+  .mdc-checkbox__background {
+    background-color: #ff8c9a;
+  }
+}
+
 .filters {
   flex: 1;
   display: flex;
@@ -66,4 +72,8 @@
       }
     }
   }
+}
+
+.spinner {
+  margin: 2vh auto;
 }

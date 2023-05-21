@@ -1,0 +1,109 @@
+<div
+  class="inner-wrapper"
+  #wrapper>
+  <div class="recipient-info">
+    <h1>Персональна інформація</h1>
+    <form
+      [formGroup]="recipientDto"
+      class="vertical">
+      <mat-form-field>
+        <mat-label>Ім'я</mat-label>
+        <input
+          matInput
+          formControlName="firstname" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>По-батькові</mat-label>
+        <input
+          matInput
+          formControlName="patronymic" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Призвіще</mat-label>
+        <input
+          matInput
+          formControlName="lastname" />
+      </mat-form-field>
+      <mat-form-field>
+        <span matPrefix>+380 &nbsp;</span>
+        <input
+          placeholder="Номер телефону"
+          matInput
+          maxlength="9"
+          formControlName="phoneNumber"
+          (input)="
+            onPhoneNumberInput(recipientDto.controls['phoneNumber'].value)
+          " />
+        <mat-error *ngIf="recipientDto.controls['phoneNumber'].hasError"
+          >Phone number should have 9 digits</mat-error
+        >
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="address-info">
+    <h1>Адреса Отримувача</h1>
+    <form
+      [formGroup]="addressDto"
+      class="vertical">
+      <div class="horizontal">
+        <mat-form-field class="low-range-item">
+          <mat-label>Країна</mat-label>
+          <input
+            matInput
+            formControlName="country" />
+        </mat-form-field>
+        <mat-form-field class="low-range-item">
+          <mat-label>Область</mat-label>
+          <input
+            matInput
+            formControlName="region" />
+        </mat-form-field>
+      </div>
+      <div class="horizontal">
+        <mat-form-field class="low-range-item">
+          <mat-label>Місто</mat-label>
+          <input
+            matInput
+            formControlName="settlement" />
+        </mat-form-field>
+        <mat-form-field class="low-range-item">
+          <mat-label>Вулиця</mat-label>
+          <input
+            matInput
+            formControlName="street" />
+        </mat-form-field>
+      </div>
+      <mat-form-field>
+        <mat-label>Номер Будинку</mat-label>
+        <input
+          matInput
+          formControlName="buildingNumber"
+          pattern="[0-9]*"
+          maxlength="3"
+          (input)="
+            onBuildingNumberInput(addressDto.controls['buildingNumber'].value)
+          " />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Номер Квартири</mat-label>
+        <input
+          matInput
+          formControlName="flatNumber"
+          maxlength="3"
+          (input)="
+            onFlatNumberInput(addressDto.controls['flatNumber'].value)
+          " />
+      </mat-form-field>
+    </form>
+  </div>
+</div>
+<div class="footer">
+  <button
+    mat-raised-button
+    class="btn"
+    (click)="order()"
+    [disabled]="!addressDto.valid || !recipientDto.valid">
+    Зробити Замовлення
+  </button>
+  <p class="shipping-price">Вартість доставки: 100грн</p>
+</div>

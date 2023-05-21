@@ -1,0 +1,23 @@
+<div
+  *ngIf="blogData as blog; else loader"
+  class="wrapper">
+  <div class="left-items">
+    <img
+      src="{{ blog.image }}"
+      alt="Картинка блогу"
+      class="blog-image" />
+  </div>
+  <div class="right-items">
+    <div class="desc-header">
+      <p class="created">{{ blog.author }} {{ blog.createdAt }}</p>
+      <p class="title">{{ blog.title }}</p>
+    </div>
+    <div class="desc-body">
+      <span class="desc-text">{{ blog.content }}</span>
+    </div>
+  </div>
+</div>
+
+<ng-template #loader>
+  <mat-spinner></mat-spinner>
+</ng-template>

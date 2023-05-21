@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
-import { SnackbarService } from '../../../shared/services/snackbar.service';
 import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs';
-import { UnSubscriberComponent } from '../../../shared/classes/unsubscriber';
+
+import { AuthService } from 'src/app/auth/services/auth.service';
+import { SnackbarService } from 'src/app/shared/services/snackbar.service';
+import { UnSubscriberComponent } from 'src/app/shared/classes/unsubscriber';
 
 @Component({
   selector: 'app-login',

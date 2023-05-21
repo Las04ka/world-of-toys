@@ -12,6 +12,7 @@ export class NavBarComponent {
   logout() {
     this.authService.logout();
     localStorage.removeItem('Authorization');
+    this.router.navigateByUrl('auth/login');
   }
   onUserProfile() {
     if (!localStorage.getItem('Authorization'))

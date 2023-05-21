@@ -1,5 +1,5 @@
 <div
-  *ngIf="cartItems"
+  *ngIf="cartItems.length; else empty"
   class="cart">
   <mat-card
     *ngFor="let item of cartItems"
@@ -45,12 +45,17 @@
     </div>
   </mat-card>
   <div class="order">
-    <p class="full-price">ціна: {{ price }}₴</p>
+    <p class="full-price">ЦІНА: {{ price }}₴</p>
     <button
       mat-raised-button
       class="order-btn"
-      (click)="makeOrder()">
+      [routerLink]="['/order']">
       Оформити Замовлення
     </button>
   </div>
 </div>
+<ng-template
+  #empty
+  class="empty">
+  <h1>Ваш Кошик Пустий</h1>
+</ng-template>

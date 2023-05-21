@@ -1,0 +1,32 @@
+nav {
+  background-color: #ff4081;
+  padding-left: 15px;
+  padding-top: 50px;
+  width: 100%;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+hr {
+  margin: 3px;
+  border-top: 2px solid #ffffff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 350px;
+}
+
+.btn {
+  color: #ffffff;
+}
+
+h1 {
+  font-size: xx-large;
+}
+
+button {
+  font-size: x-large;
+  margin-bottom: 5%;
+}

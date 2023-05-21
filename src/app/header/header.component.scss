@@ -13,7 +13,7 @@
 }
 
 .logo {
-  width: 85px;
+  width: 75px;
 }
 
 .title {
@@ -28,24 +28,19 @@
   display: flex;
   color: #ff8c9a;
   font-weight: bold;
-  font-size: 36px;
+  font-size: 30px;
 }
 
 .slogan {
   color: #6c6c6c;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: bold;
-  width: 140px;
+  width: 222px;
   text-align: center;
 }
 
 .right-items {
   display: flex;
-}
-
-.phone-icon {
-  pointer-events: none;
-  cursor: default;
 }
 
 .right-text {

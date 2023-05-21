@@ -1,7 +1,7 @@
 <div class="wrapper">
   <mat-card class="card-inner">
     <mat-card-header class="card-header">
-      <mat-card-title>Registration</mat-card-title>
+      <mat-card-title>Реєстрація</mat-card-title>
       <div class="header-icons">
         <button
           mat-mini-fab
@@ -21,50 +21,50 @@
         <mat-form-field>
           <input
             matInput
-            placeholder="firstname"
+            placeholder="Ім'я"
             formControlName="firstname" />
           <mat-error
             *ngIf="
               form.controls['firstname'].touched &&
               form.controls['firstname'].hasError('required')
             ">
-            Name is required
+            Поле обов'язкове
           </mat-error>
         </mat-form-field>
         <mat-form-field>
           <input
             matInput
-            placeholder="secondName"
+            placeholder="Прізвище"
             formControlName="lastname" />
           <mat-error
             *ngIf="
               form.controls['lastname'].touched &&
               form.controls['lastname'].hasError('required')
             ">
-            Second name is required
+            Поле обов'язкове
           </mat-error>
         </mat-form-field>
         <mat-form-field>
           <input
             matInput
             type="email"
-            placeholder="Email"
+            placeholder="Пошта"
             formControlName="email" />
           <mat-error *ngIf="email.touched && email.hasError('required')">
-            Email is required
+            Поле обов'язкове
           </mat-error>
           <mat-error *ngIf="email.touched && email.hasError('email')">
-            Email must be valid
+            Пошта не валідна
           </mat-error>
         </mat-form-field>
         <mat-form-field>
           <input
             matInput
             type="password"
-            placeholder="Password"
+            placeholder="Пароль"
             formControlName="password" />
           <mat-error *ngIf="password.touched && password.hasError('required')">
-            Password is required
+            Поле обов'язкове
           </mat-error>
         </mat-form-field>
         <button
@@ -72,11 +72,11 @@
           type="submit"
           color="accent"
           [disabled]="!form.valid">
-          Sign up
+          Зареєструватися
         </button>
       </form>
       <div class="links">
-        <a routerLink="/auth/login"> Login </a>
+        <a routerLink="/auth/login"> Вхід </a>
       </div>
     </mat-card-content>
   </mat-card>

@@ -1,0 +1,20 @@
+.container-fluid{
+  padding-left: 15%;
+}
+
+.account-image{
+  width: 100px;
+  height: 100px;
+  font-size: 100px;
+  color: #A9A9A9FF;
+}
+
+#photo{
+  width: fit-content;
+}
+
+.btn{
+  background-color: #7BC5AE;
+  border-color: #7BC5AE;
+}
+

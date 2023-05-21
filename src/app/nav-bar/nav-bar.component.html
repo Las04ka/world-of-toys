@@ -10,8 +10,16 @@
       [routerLink]="['/']">
       Головна
     </p>
-    <p class="route">Блог</p>
-    <p class="route">Про нас</p>
+    <p
+      class="route"
+      [routerLink]="['/blog']">
+      Блог
+    </p>
+    <p
+      class="route"
+      [routerLink]="['/about']">
+      Про нас
+    </p>
   </div>
   <div class="right-items">
     <button
@@ -29,11 +37,15 @@
       <mat-icon>account_circle</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>Profile</button>
+      <button
+        mat-menu-item
+        [routerLink]="['/user']">
+        Профіль
+      </button>
       <button
         mat-menu-item
         (click)="logout()">
-        Logout
+        Вийти
       </button>
     </mat-menu>
   </div>

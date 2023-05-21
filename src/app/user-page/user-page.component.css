@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  font-family: Nunito, serif;
+}
+
+app-user-nav {
+  left: 0;
+  display: flex;
+  height: available;
+  width: 30%;
+  background-attachment: scroll;
+}
+
+app-user-orders {
+  width: 70%;
+  overflow-y: auto;
+}

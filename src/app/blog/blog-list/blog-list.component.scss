@@ -1,0 +1,44 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+mat-card {
+  height: 100%;
+  padding: 0 40px;
+  gap: 10px;
+
+  .title {
+    cursor: pointer;
+    font-family: Nunito, serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: #ff8c9a;
+    height: 64px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .created {
+    color: #aaaaaa;
+    font-family: Nunito, serif;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .blog-image {
+    width: 100%;
+    height: 172px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .read-more {
+    background-color: #ff8c9a;
+    color: white;
+    font-weight: bold;
+    border-radius: 21px;
+  }
+}

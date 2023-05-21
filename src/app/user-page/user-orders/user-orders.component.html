@@ -1,0 +1,16 @@
+<div class="container-fluid ml-5">
+  <mat-card
+    class="mt-5"
+    *ngFor="let order of orders; index as i">
+    <mat-card-title>Номер замовлення: {{ i + 1 }}</mat-card-title>
+    <mat-card-subtitle
+      >Дата замовлення: {{ order.dateTime | date : 'short' }}</mat-card-subtitle
+    >
+    <mat-card-footer align="end">
+      <h2
+        class="mr-5"
+        [textContent]="order.totalPrice + ' грн'"></h2>
+    </mat-card-footer>
+  </mat-card>
+  <br />
+</div>

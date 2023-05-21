@@ -1,0 +1,15 @@
+mat-card {
+  display: block;
+  border-radius: 25px;
+  padding: 5px 20px;
+  width: 80%;
+  background-color: #ff8c9a;
+}
+
+.container-fluid {
+  color: #ffffff;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

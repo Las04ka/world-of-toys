@@ -1,7 +1,7 @@
 <div class="wrapper">
   <mat-card class="card-inner">
     <mat-card-header class="card-header">
-      <mat-card-title>Login</mat-card-title>
+      <mat-card-title>Вхід</mat-card-title>
       <div class="header-icons">
         <button
           mat-mini-fab
@@ -22,23 +22,23 @@
           <input
             matInput
             type="email"
-            placeholder="Email"
+            placeholder="Пошта"
             formControlName="email" />
           <mat-error *ngIf="email.touched && email.hasError('required')">
-            Email is required
+            Поле обов'язкове
           </mat-error>
           <mat-error *ngIf="email.touched && email.hasError('email')">
-            Email must be valid
+            Пошта не валідна
           </mat-error>
         </mat-form-field>
         <mat-form-field>
           <input
             matInput
             type="password"
-            placeholder="Password"
+            placeholder="Пароль"
             formControlName="password" />
           <mat-error *ngIf="password.touched && password.hasError('required')">
-            Password is required
+            Поле обов'язкове
           </mat-error>
         </mat-form-field>
         <button
@@ -46,12 +46,12 @@
           type="submit"
           color="accent"
           [disabled]="!form.valid">
-          Sign in
+          Ввійти
         </button>
       </form>
       <div class="links">
-        <a routerLink="/auth/register"> Forgot password? </a>
-        <a routerLink="/auth/register"> Sign Up! </a>
+        <a routerLink="/auth/register"> Забули пароль? </a>
+        <a routerLink="/auth/register"> Реєстрація </a>
       </div>
     </mat-card-content>
   </mat-card>
